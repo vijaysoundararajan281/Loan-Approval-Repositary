@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+
+
+        <meta charset="UTF-8">
+        <title>LOAN APPROVAL</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+        
+    </head>
+    <body>
+        <body background="loan.jpg">
+        <div class="login">
+            <h1>LOAN APPROVAL PREDICTOR</h1>
+            
+            <form action="{{url_for('predict')}}"method="post">
+                <input type="text" name="Gender" placeholder="Enter Gender" required="required">
+                <input type="text" name="Married" placeholder="Marital Status" required="required">
+                <input type="text" name="Dependents" placeholder="Number of Dependents" required="required">
+                <input type="text" name="Education" placeholder="Applicant Education" required="required">
+                <input type="text" name="Self_Employed" placeholder="Self employed" required="required">
+                <input type="text" name="ApplicantIncome" placeholder="Applicant income" required="required">
+                <input type="text" name="CoapplicantIncome" placeholder="Coapplicant income" required="required">
+                <input type="text" name="Loanamount" placeholder="Loan amount in thousand" required="required">
+                <input type="text" name="Loan_Amount_Term" placeholder="Term of loan in numbers" required="required">
+                <input type="text" name="Credit_History" placeholder="credit history" required="required">
+                <input type="text" name="Property_Area" placeholder="Property_Area" required="required">
+                <button type="submit" class="btn btn-primary btn-block btn-large">Prediction</button>
+                
+            </form>
+            <br>
+            <br>
+            {{prediction_text}}
+        </div>
+    </body>
+</html>
